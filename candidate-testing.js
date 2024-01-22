@@ -24,7 +24,7 @@ let correctAnswers = [
   "true", 
   "40", 
   "Trajectory", 
-  3
+  "3"
 ];
 let candidateAnswers = [];
 
