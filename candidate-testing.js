@@ -58,29 +58,15 @@ function gradeQuiz(candidateAnswers) {
 //   console.log("Wrong Answer, Try Again."); 
 // } - Part 1 code
 
-console.log(`
------------------------------------------------------------------
-~Question #1~
-You Answer: ${correctAnswers[0]}
-Correct Answer: ${candidateAnswers[0]}
------------------------------------------------------------------
-~Question #2~
-You Answer: ${correctAnswers[1]}
-Correct Answer: ${candidateAnswers[1]}
------------------------------------------------------------------
-~Question #3~
-You Answer: ${correctAnswers[2]}
-Correct Answer: ${candidateAnswers[2]}
------------------------------------------------------------------
-~Question #4~
-You Answer: ${correctAnswers[3]}
-Correct Answer: ${candidateAnswers[3]}
------------------------------------------------------------------
-~Question #5~
-You Answer: ${correctAnswers[4]}
-Correct Answer: ${candidateAnswers[4]}
------------------------------------------------------------------
-`);
+for (i = 0; i < candidateAnswers.length; i++) {
+  console.log(`
+          Question #${i+1}
+-------------------------------------
+Your Answer: ${candidateAnswers[i]} 
+Correct Answer: ${correctAnswers[i]}
+-------------------------------------
+  `);
+}
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
