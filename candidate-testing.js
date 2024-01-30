@@ -27,7 +27,7 @@ let correctAnswers = [
   "3"
 ];
 let candidateAnswers = [];
-let numCorrectAnswers = 0;
+
 
 
 
@@ -49,6 +49,10 @@ function askQuestion() {
 
 
 function gradeQuiz(candidateAnswers) {
+
+let numCorrectAnswers = 0;
+
+
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
@@ -72,14 +76,14 @@ Correct Answer: ${correctAnswers[i]}
 //- Part 2 code
 
 for (let i = 0; i < questions.length; i++) {
-  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-    numCorrectAnswers += 1;
-  } else {
-
-  }
+ if(correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
+  numCorrectAnswers += 1;
+  } 
 }
-  
-let grade = (numCorrectAnswers/5) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
+
+// console.log(numCorrectAnswers); - testing code
+
+let grade = (numCorrectAnswers / 5) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
 let status = '';
 
 if (grade < 80) {
@@ -91,12 +95,12 @@ if (grade < 80) {
 console.log(`
 >>> Overall Grade: ${grade}% (${numCorrectAnswers}/5 answers correct!) <<<
 >>> Status: ${status} <<<
-`);  
-  
+`); 
+
+// console.log((grade)); - testing code
 
 
-return grade;
-
+return grade; 
   
 }
 
