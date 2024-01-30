@@ -27,6 +27,7 @@ let correctAnswers = [
   "3"
 ];
 let candidateAnswers = [];
+let numCorrectAnswers = 0;
 
 
 
@@ -58,6 +59,7 @@ function gradeQuiz(candidateAnswers) {
 //   console.log("Wrong Answer, Try Again."); 
 // } - Part 1 code
 
+
 for (i = 0; i < candidateAnswers.length; i++) {
   console.log(`
           Question #${i+1}
@@ -66,13 +68,39 @@ Your Answer: ${candidateAnswers[i]}
 Correct Answer: ${correctAnswers[i]}
 -------------------------------------
   `);
+} 
+//- Part 2 code
+
+for (let i = 0; i < questions.length; i++) {
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+    numCorrectAnswers += 1;
+  } else {
+
+  }
+}
+  
+let grade = (numCorrectAnswers/5) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
+let status = '';
+
+if (grade < 80) {
+  status = "FAILED! Please Try Again."
+} else {
+  status = "PASSED!"
 }
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+console.log(`
+>>> Overall Grade: ${grade}% (${numCorrectAnswers}/5 answers correct!) <<<
+>>> Status: ${status} <<<
+`);  
+  
 
 
-  return grade;
+return grade;
+
+  
 }
+
+
 
 function runProgram() {
   askForName();
